@@ -1,0 +1,18 @@
+Console.WriteLine("Select an integer from 5-10:");
+string? readline;
+bool value=true;
+int numericValue=0;
+do
+{
+    readline=Console.ReadLine();
+    int.TryParse(readline, out numericValue);
+    if((numericValue>4)&&(numericValue<11))
+    {
+        value=false;
+    }
+    else
+    {
+        Console.WriteLine("Please Try Again!!");
+    }
+}while(value);
+Console.WriteLine($"The value {numericValue} has been accepted.");

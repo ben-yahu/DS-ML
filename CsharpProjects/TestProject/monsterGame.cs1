@@ -1,0 +1,34 @@
+﻿int monsterHealth=10;
+int heroHealth=10;
+int chance=0;
+
+while((heroHealth > 0) && (monsterHealth > 0))
+{   Random random=new Random();
+    int attack=random.Next(1,11);
+    if (chance%2==0)
+    { monsterHealth-=attack;
+      Console.WriteLine($"The Player Attacked!! Hit point:{attack}");
+      if(monsterHealth<=0)
+      {
+        Console.WriteLine("The Monster was killed.");
+      }
+      else
+      { 
+        Console.WriteLine($"The Monster has {monsterHealth} health");
+        chance++;
+      }
+    }
+    else 
+    { heroHealth-=attack;
+      Console.WriteLine($"The Monster Attacked!! Hit point:{attack}");
+      if(heroHealth<=0)
+      {
+        Console.WriteLine("The Hero was killed.");
+      }
+      else
+      { 
+        Console.WriteLine($"The Hero has {heroHealth} health");
+        chance++;
+      }
+    }
+}
